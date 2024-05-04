@@ -73,16 +73,16 @@ class Room:
 		if not self.can_move_to(direction):
 			return None
 		cost += self.costs[direction]
-		if direction is "UP":
+		if direction == "UP":
 			z += 1
-		if direction is "DOWN":
+		if direction == "DOWN":
 			z -= 1
-		if direction is "EAST":
+		if direction == "EAST":
 			x += 1
-		if direction is "WEST":
+		if direction == "WEST":
 			x -= 1
-		if direction is "NORTH":
+		if direction == "NORTH":
 			y -= 1
-		if direction is "SOUTH":
+		if direction == "SOUTH":
 			y += 1
 		return self.maze.rooms[x][y][z], cost

@@ -19,13 +19,13 @@ class Fringe(object):
         :param fringe_type: The desired type for the queue
         :return: A queue of type fringe_type
         """
-        if fringe_type is "STACK":
+        if fringe_type == "STACK":
             return queue.LifoQueue(self.__MAX_FRINGE_SIZE)
 
-        if fringe_type is "FIFO":
+        if fringe_type == "FIFO":
             return queue.Queue(self.__MAX_FRINGE_SIZE)
 
-        if fringe_type is "PRIORITY":
+        if fringe_type == "PRIORITY":
             return queue.PriorityQueue(self.__MAX_FRINGE_SIZE)
 
     def __init__(self, fringe_type='FIFO'):
