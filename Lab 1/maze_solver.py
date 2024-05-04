@@ -17,6 +17,14 @@ def heuristic(room, goal):
 
 
 def depth_limited(fr, visited, depth_limit):
+    """
+    Performs search with a limited depth
+    :fr: fringe containing rooms
+    :visited: list of visited rooms
+    :depth_limit: int that resembles the limit
+    :return: goal state
+    """
+  
     while not fr.is_empty() and depth_limit >= 0:
         cost, state = fr.pop()
         room = state.get_room()
@@ -39,6 +47,7 @@ def ids(maze):
     """
     Performs iterative deepening search in a maze
     :param maze: maze which is used for IDS
+    :return: solution/path of maze
     """
 
     depth = 0
@@ -75,15 +84,13 @@ def solve_maze_general(maze, algorithm):
 
     # get the start room, create state with start room and None as parent and put it in fringe
     start_room = maze.get_room(*maze.get_start())
-
+    goal_room = maze.get_room(*maze.get_goal())
+    
     if algorithm == "BFS" or "DFS" or "UCS":
         state = State(start_room, None)
-
     elif algorithm == "GREEDY" or "ASTAR":
-        goal_room = maze.get_room(*maze.get_goal())
         start_priority = heuristic(start_room, goal_room)
         state = State(start_room, None, priority=start_priority)
-    
     elif algorithm == "IDS":
         solution = ids(maze)
         if solution:
@@ -98,7 +105,6 @@ def solve_maze_general(maze, algorithm):
             print("not solved")     # fringe is empty and goal is not found, so maze is not solved
             fr.print_stats()        # print the statistics of the fringe
             return False
-
 
     fr.push(state)
     visited = []
@@ -144,5 +150,3 @@ def solve_maze_general(maze, algorithm):
     print("not solved")     # fringe is empty and goal is not found, so maze is not solved
     fr.print_stats()        # print the statistics of the fringe
     return False
-
-
