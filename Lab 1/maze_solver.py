@@ -15,6 +15,8 @@ def solve_maze_general(maze, algorithm):
         fr = Fringe("FIFO")
     elif algorithm == "DFS":
         fr = Fringe("STACK")
+    elif algorithm == "UCS":
+        fr = Fringe("PRIORITY")
     else:
         print("Algorithm not found/implemented, exit")
         return
@@ -23,12 +25,12 @@ def solve_maze_general(maze, algorithm):
     room = maze.get_room(*maze.get_start())
     state = State(room, None)
     fr.push(state)
-    visited = [room]  # Change: We have a list to check our visited positions.
+    visited = []
 
     while not fr.is_empty():
 
         # get item from fringe and get the room from that state
-        state = fr.pop()
+        cost, state = fr.pop()
         room = state.get_room()
 
         if room.is_goal():
@@ -41,14 +43,19 @@ def solve_maze_general(maze, algorithm):
             maze.print_maze_with_path(state)
             return True
 
+        visited.append(room)
+
         for d in room.get_connections():
             # loop through every possible move
-            new_room, cost = room.make_move(d, state.get_cost())  # Get new room after move and cost to get there
-            if new_room not in visited:  # Change: If we are retreading old ground, we skip the connection.
-                visited.append(new_room)  # Otherwise, we log it down.
-                new_state = State(new_room, state, cost)  # Create new state with new room and old room
-                fr.push(new_state)  # push the new state
+            new_room, cost = room.make_move(d, state.get_cost())    # Get new room after move and cost to get there
+            if new_room not in visited:
+                new_state = State(new_room, state, cost)            # Create new state with new room and old room
+                if algorithm == "UCS":
+                    fr.push(new_state, cost)                        # Push state as a tuple (cost, state), which adds priority into the heapq
+                else:
+                    fr.push(new_state)                              # push the new state
 
-    print("not solved")  # fringe is empty and goal is not found, so maze is not solved
-    fr.print_stats()  # print the statistics of the fringe
+
+    print("not solved")     # fringe is empty and goal is not found, so maze is not solved
+    fr.print_stats()        # print the statistics of the fringe
     return False

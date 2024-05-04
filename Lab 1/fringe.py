@@ -33,7 +33,7 @@ class Fringe(object):
         super(Fringe, self).__init__()
         self.__fringe = self.create_fringe(self.__type)
 
-    def push(self, item):
+    def push(self, item, cost=0):
         """
         puts the item in the fringe
         :param item: item to put in the fringe
@@ -44,10 +44,11 @@ class Fringe(object):
                   + str(self.__MAX_FRINGE_SIZE) + ") elements")
             self.print_stats()
             sys.exit(1)
-        self.__fringe.put(item, block=False)
+        self.__fringe.put((cost, item), block=False)
         if self.__fringe.qsize() > self.__maxSize:
             self.__maxSize = self.__fringe.qsize()
         self.__insertions += 1
+        
 
     def pop(self):
         """
