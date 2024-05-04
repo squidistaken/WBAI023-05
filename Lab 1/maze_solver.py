@@ -24,7 +24,7 @@ def depth_limited(fr, visited, depth_limit):
     :depth_limit: int that resembles the limit
     :return: goal state
     """
-
+  
     while not fr.is_empty() and depth_limit >= 0:
         cost, state = fr.pop()
         room = state.get_room()
