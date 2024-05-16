@@ -17,5 +17,5 @@ constraints = [
     Constraint("A*E + B* F + C != D")
 ]
 
-csp = CSP(variables, constraints, keep_node=False, keep_arc= False, heuristic= "mrv")
+csp = CSP(variables, constraints, keep_node=True, keep_arc= True, heuristic="mrv")
 csp.solve()
