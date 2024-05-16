@@ -214,20 +214,43 @@ class CSP:
         return [v for v in self.variables if v.value is None]
     
     def mrv_heuristic(self) -> Variable:
-        shortest_variable = None
+        """
+        Chooses the variable with the fewest “legal” values.
+        :return: Variable with the fewest "legal" values.
+        """
+        mrv = None
         
+        # We do not need to look at assigned variables.
         for v in self.unassigned_var():
-            if shortest_variable == None:
-                shortest_variable = v
-            if len(v.domain) < len(shortest_variable.domain):
-                shortest_variable = v
+            if mrv is None:
+                mrv = v
+            # If v's domain is less than mrv's domain, then mrv becomes v.
+            if len(v.domain) < len(mrv.domain):
+                mrv = v
         
-        return shortest_variable
+        return mrv
 
     def degree_heuristic(self) -> Variable:
-        # You have to implement this yourself
-        raise NotImplementedError
+        values = dict()
+        for constraint in self.constraints:
+            for v in constraint.unassigned_variables():
+                if v.name not in values:
+                    values[v.name] = 1
+                else:
+                    values[v.name] += 1
+        
+        highest_key = None
+        for variable in values:
+            if not highest_key:
+                highest_key = variable
+            elif values[variable] > values[highest_key]:
+                highest_key = variable
+
+        for v in self.unassigned_var():
+            if v.name == highest_key:
+                return v
     
+
     def choose_next_variable(self) -> Variable:
         return self.variables[self.n_assigned_variables]
 
