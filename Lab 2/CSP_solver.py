@@ -1,6 +1,6 @@
-
 class Constraint(object): pass
 class Variable(object): pass
+from utils import connect_variables_and_constraints
 
 def add_to_dict(di , key , val):
     if di.get(key) is None:
@@ -82,8 +82,6 @@ class Variable:
             if not constraint.evaluate():
                 return True 
         return False
-
-from utils import connect_variables_and_constraints
 
 
 class CSP:
@@ -216,8 +214,15 @@ class CSP:
         return [v for v in self.variables if v.value is None]
     
     def mrv_heuristic(self) -> Variable:
-        # You have to implement this yourself
-        raise NotImplementedError
+        shortest_variable = None
+        
+        for v in self.unassigned_var():
+            if shortest_variable == None:
+                shortest_variable = v
+            if len(v.domain) < len(shortest_variable.domain):
+                shortest_variable = v
+        
+        return shortest_variable
 
     def degree_heuristic(self) -> Variable:
         # You have to implement this yourself
