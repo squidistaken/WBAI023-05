@@ -1,4 +1,4 @@
-from  CSP_solver import *
+from CSP_solver import *
 from utils import all_diff
 
 N_QUEENS = 8
@@ -11,11 +11,11 @@ for num in range(N_QUEENS):
 
 constraints = all_diff(variables)
 
-#add constraints for diagonals
+# add constraints for diagonals
 for q1 in range(N_QUEENS):
-    for q2 in range(q1+1, N_QUEENS):
-        constraint = Constraint(f"{q2 - q1} != abs( queen_{q1} - queen_{q2})")
+    for q2 in range(q1 + 1, N_QUEENS):
+        constraint = Constraint(f"{q2 - q1} != abs(queen_{q1} - queen_{q2})")
         constraints.append(constraint)
 
-csp= CSP(variables, constraints)
-csp.solve()
+csp = CSP(variables, constraints, keep_node=False, keep_arc=False, heuristic=None)
+csp.solve(verbose=False)

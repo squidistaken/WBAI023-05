@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="caa124fd-56e0-4352-bf0c-f56edf00f7fb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 2/CSP_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/CSP_solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 2/equations.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/equations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 2/harry_potter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/harry_potter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 2/queen.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/queen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 2/testing_problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/testing_problem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 2/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +31,13 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.CSP_solver.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.harry_potter.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Debug&quot;,
     &quot;Python.maze_solver.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.queen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testing_problem.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
@@ -34,8 +45,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.queen">
+    <configuration name="queen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="WBAI023-05" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -44,12 +55,35 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lab 1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lab 2" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lab 1/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lab 2/queen.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testing_problem" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="WBAI023-05" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lab 2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lab 2/testing_problem.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -60,7 +94,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
+        <item itemvalue="Python.queen" />
+        <item itemvalue="Python.testing_problem" />
       </list>
     </recent_temporary>
   </component>
@@ -81,11 +116,20 @@
       <updated>1714553114449</updated>
       <workItem from="1714553115619" duration="4396000" />
       <workItem from="1714662643629" duration="1401000" />
+      <workItem from="1716042891397" duration="3459000" />
+      <workItem from="1716047907262" duration="324000" />
+      <workItem from="1716048319104" duration="911000" />
     </task>
     <servers />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/WBAI023_05$main.coverage" NAME="main Coverage Results" MODIFIED="1714663167242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 1" />
+    <SUITE FILE_PATH="coverage/WBAI023_05$main.coverage" NAME="main Coverage Results" MODIFIED="1715853556217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 1" />
+    <SUITE FILE_PATH="coverage/WBAI023_05$testing_problem.coverage" NAME="testing_problem Coverage Results" MODIFIED="1716043073474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 2" />
+    <SUITE FILE_PATH="coverage/WBAI023_05$queen.coverage" NAME="queen Coverage Results" MODIFIED="1716049196148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 2" />
     <SUITE FILE_PATH="coverage/WBAI023_05$maze_solver.coverage" NAME="maze_solver Coverage Results" MODIFIED="1714557058328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 1" />
+    <SUITE FILE_PATH="coverage/WBAI023_05$CSP_solver.coverage" NAME="CSP_solver Coverage Results" MODIFIED="1716044076474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 2" />
+    <SUITE FILE_PATH="coverage/WBAI023_05$equations.coverage" NAME="equations Coverage Results" MODIFIED="1715849691550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 2" />
+    <SUITE FILE_PATH="coverage/WBAI023_05$harry_potter.coverage" NAME="harry_potter Coverage Results" MODIFIED="1716044792855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 2" />
+    <SUITE FILE_PATH="coverage/WBAI023_05$utils.coverage" NAME="utils Coverage Results" MODIFIED="1716047874211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 2" />
   </component>
 </project>
