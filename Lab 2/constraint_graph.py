@@ -19,5 +19,5 @@ constraints = [
     Constraint("C > E"),
 ]
 
-csp = CSP(variables, constraints, keep_node=False, keep_arc=True, heuristic=None)
+csp = CSP(variables, constraints, keep_node=False, keep_arc=False, heuristic=None)
 csp.solve(verbose=False)
