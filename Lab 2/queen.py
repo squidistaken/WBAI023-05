@@ -18,4 +18,4 @@ for q1 in range(N_QUEENS):
         constraints.append(constraint)
 
 csp = CSP(variables, constraints, keep_node=False, keep_arc=False, heuristic=None)
-csp.solve(verbose=False)
+csp.solve(verbose=True)
