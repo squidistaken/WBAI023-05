@@ -239,6 +239,10 @@ class CSP:
         return mrv
 
     def degree_heuristic(self) -> Variable:
+        """
+        Chooses the unassigned variable that is involved in the largest number of constraints with other unassigned variables.
+        :return: Variable that is involved in the largest number of constraints on other unassigned variables.
+        """
         values = dict()
         for constraint in self.constraints:
             for v in constraint.unassigned_variables():
