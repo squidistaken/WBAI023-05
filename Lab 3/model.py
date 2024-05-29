@@ -410,8 +410,8 @@ def check_all_models():
             print("KB entails INFER\n")
             entailment += 1
 
-    print(f"Models in which KB entails INFER: {entailment}")
-    print(f"Models in which KB does not entail INFER: {no_entailment}\n")
+    print("Models in which KB entails INFER:", entailment)
+    print("Models in which KB does not entail INFER:", no_entailment, "\n")
 
     return
 
