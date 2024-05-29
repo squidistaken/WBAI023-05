@@ -21,5 +21,5 @@ constraints = [
     Constraint("10*U + N + 10*U + N + 1000*N + 100*E + 10*U + F == 1000*O + 100*N + 10*Z + E")
 ]
 
-csp = CSP(variables, constraints, keep_node=False, keep_arc=False, heuristic=None)
-solution = csp.solve(verbose=False)
+csp = CSP(variables, constraints, keep_node=False, keep_arc=False, heuristic="mrv")
+csp.solve(verbose=False)
