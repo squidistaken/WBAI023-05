@@ -380,6 +380,8 @@ def evaluate_random_model():
 def check_all_models():
     # This function should return True if KB entails INFER, otherwise it should return False
     # TODO: Revise if this is incorrect.
+
+    # Set up all possible models - represents a truth table.
     models = []
     booleans = list(itertools.product([True, False], repeat=len(identifiers)))
     for b in booleans:
@@ -390,6 +392,9 @@ def check_all_models():
             pos += 1
         models.append(model)
 
+    no_entailment = 0
+    entailment = 0
+    # Evaluating each model
     for m in models:
         print("Chosen model: ", m)
         kb_eval = evaluate_expression_set(kb, m)
@@ -400,8 +405,13 @@ def check_all_models():
 
         if kb_eval and not infer_eval:
             print("KB does not entail INFER\n")
+            no_entailment += 1
         else:
             print("KB entails INFER\n")
+            entailment += 1
+
+    print(f"Models in which KB entails INFER: {entailment}")
+    print(f"Models in which KB does not entail INFER: {no_entailment}\n")
 
     return
 
