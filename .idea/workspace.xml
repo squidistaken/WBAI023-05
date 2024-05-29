@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="caa124fd-56e0-4352-bf0c-f56edf00f7fb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab 2/cryptarithmetic_puzzles.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2/cryptarithmetic_puzzles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab 3/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 3/model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +42,7 @@
     "Python.harry_potter.executor": "Run",
     "Python.main.executor": "Debug",
     "Python.maze_solver.executor": "Debug",
+    "Python.model.executor": "Run",
     "Python.queen.executor": "Debug",
     "Python.testing_problem.executor": "Run",
     "Python.utils.executor": "Debug",
@@ -72,6 +73,7 @@
       <workItem from="1716042891397" duration="3459000" />
       <workItem from="1716047907262" duration="324000" />
       <workItem from="1716048319104" duration="4168000" />
+      <workItem from="1716983632052" duration="1580000" />
     </task>
     <servers />
   </component>
@@ -80,7 +82,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Lab 2/CSP_solver.py</url>
-          <line>330</line>
+          <line>334</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -114,9 +116,9 @@
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Lab 2/cryptarithmetic_puzzles.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="47" />
+          <url>file://$PROJECT_DIR$/Lab 3/model.py</url>
+          <line>392</line>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -132,5 +134,6 @@
     <SUITE FILE_PATH="coverage/WBAI023_05$equations.coverage" NAME="equations Coverage Results" MODIFIED="1715849691550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 2" />
     <SUITE FILE_PATH="coverage/WBAI023_05$harry_potter.coverage" NAME="harry_potter Coverage Results" MODIFIED="1716053466318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 2" />
     <SUITE FILE_PATH="coverage/WBAI023_05$utils.coverage" NAME="utils Coverage Results" MODIFIED="1716057392410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 2" />
+    <SUITE FILE_PATH="coverage/WBAI023_05$model.coverage" NAME="model Coverage Results" MODIFIED="1716985103683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Lab 3" />
   </component>
 </project>

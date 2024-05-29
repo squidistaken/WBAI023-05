@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import sys
 import random
+import itertools
 
 # Global variables for the KB set, the INFER set and the set of identifiers
 kb = []
@@ -378,11 +379,31 @@ def evaluate_random_model():
 
 def check_all_models():
     # This function should return True if KB entails INFER, otherwise it should return False
-    print("The function check_all_models is not implemented yet")
-    print("The goal of this pdf is to implement this yourself")
-    print("Currently, this function always returns True")
+    # TODO: Revise if this is incorrect.
+    models = []
+    booleans = list(itertools.product([True, False], repeat=len(identifiers)))
+    for b in booleans:
+        model = {}
+        pos = 0
+        for i in identifiers:
+            model[i] = b[pos]
+            pos += 1
+        models.append(model)
 
-    return True
+    for m in models:
+        print("Chosen model: ", m)
+        kb_eval = evaluate_expression_set(kb, m)
+        infer_eval = evaluate_expression_set(infer, m)
+
+        print("     KB evaluates to: ", kb_eval)
+        print("     INFER evaluates to: ", infer_eval, "\n")
+
+        if kb_eval and not infer_eval:
+            print("KB does not entail INFER\n")
+        else:
+            print("KB entails INFER\n")
+
+    return
 
 
 def main():
