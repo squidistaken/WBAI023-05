@@ -276,8 +276,43 @@ def init():
 # It should not be necessary to change any code above this line!
 ##
 
-def recursive_print_proof(idx, clause_set):
-    print("Implement the function recursive_print_proof() yourself!")
+def define_str(current, parent1, parent2):
+    current.print_clause()
+    print(" is inferred from", end=" ")
+    parent1.print_clause()
+    print(" and", end=" ")
+    parent2.print_clause()
+    print("\n", end="")
+
+
+def recursive_print_proof(idx, clause_set, parent_group_list=None):
+    if not parent_group_list:
+        parent_group_list = []
+    current_clause = clause_set[idx]
+    parent_clause = Clause("")
+    found = False
+
+    for i in range(len(clause_set)):
+        if found:
+            break
+        for j in range(i + 1, len(clause_set)):
+            # Only apply resolution when there's at least one negation in one set of a symbol in the other set
+            if can_resolve(clause_set[i], clause_set[j]):
+                resolvent = resolve_clauses(clause_set[i], clause_set[j])
+                if current_clause.equals(resolvent):
+                    parent_clause = clause_set[j]
+                    found = True
+                    parent_group_list.append((current_clause, clause_set[i], clause_set[j]))
+                    break
+
+    if not found:
+        for _ in range(len(parent_group_list)):
+            cur, p1, p2 = parent_group_list.pop()
+            define_str(cur, p1, p2)
+        return
+    
+    idx = find_index_of_clause(parent_clause, clause_set)
+    recursive_print_proof(idx, clause_set, parent_group_list)
 
 
 def print_proof(clause_set):
