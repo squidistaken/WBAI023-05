@@ -262,12 +262,31 @@ def init():
     Makes an example hardcoded KB with clauses {~a,~b}, {a,~b,~c,~d}, {b,~d}, {c,~d}
     """
     kb = []
-
-    kb.append(Clause("~a,~b"))
-    kb.append(Clause("a,~b,~c,~d"))
-    kb.append(Clause("b,~d"))
-    kb.append(Clause("c,~d"))
-    kb.append(Clause("d"))
+    kb_standard_input = str(input())
+    kb_clause = ""
+    idx = 0
+    
+    # Read input and create clauses for the Knowledge Base
+    # Example: KB=[[~a,~b],[a,~b,~c,~d],[b,~d],[c,~d],[d]]
+    while idx < len(kb_standard_input):
+        # These characters are of no importance, so we skip them
+        if kb_standard_input[idx].isupper() or kb_standard_input[idx] in "=,]":
+            idx += 1
+        
+        elif kb_standard_input[idx] == "[":
+            # Start of a clause
+            if kb_standard_input[idx + 1] != "[":
+                idx += 1
+                # Loop until we find a closing bracket, signaling the end of a clause in the input
+                while kb_standard_input[idx] != "]":
+                    # We add every letter in the clause to a placeholer string
+                    kb_clause += kb_standard_input[idx]
+                    idx += 1
+                # Append and reset the string
+                kb.append(Clause(kb_clause))
+                kb_clause = ""
+            else:
+                idx += 1
 
     return kb
 
