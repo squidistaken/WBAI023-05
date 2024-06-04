@@ -258,10 +258,8 @@ def resolution(kb):
 
 
 def init():
-    """
-    Makes an example hardcoded KB with clauses {~a,~b}, {a,~b,~c,~d}, {b,~d}, {c,~d}
-    """
     kb = []
+    # Example input: [a,~b],[a,b,~c,~d],[b,c,e], KB=[[a,~b],[a,b,~c,~d],[b,c,e]]
     kb_standard_input = str(input())
     kb_clause = ""
     idx = 0
@@ -279,7 +277,7 @@ def init():
                 idx += 1
                 # Loop until we find a closing bracket, signaling the end of a clause in the input
                 while kb_standard_input[idx] != "]":
-                    # We add every letter in the clause to a placeholer string
+                    # We add every letter in the clause to a placeholder string
                     kb_clause += kb_standard_input[idx]
                     idx += 1
                 # Append and reset the string
@@ -324,6 +322,7 @@ def recursive_print_proof(idx, clause_set, parent_group_list=None):
                     parent_group_list.append((current_clause, clause_set[i], clause_set[j]))
                     break
 
+    # Base case: No
     if not found:
         for _ in range(len(parent_group_list)):
             cur, p1, p2 = parent_group_list.pop()
