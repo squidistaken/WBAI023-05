@@ -39,5 +39,20 @@ div2(0, 0).
 div2(s(s(X)), s(Y)) :- div2(X, Y).
 
 % divi2(X, Y) is true if times(Y, 2, X) is true
-
 divi2(X, Y) :- times(Y, s(s(0)), X).
+
+% member(X, L) is true if X is a member of the list L
+member(X, [X|_]).
+member(X, [_|T]) :- member(X, T).
+
+% concat(L, X, Y) is true if L is the concatenation of the lists X and Y
+concat([], L, L).
+concat([H|T], L, [H|R]) :- concat(T, L, R).
+
+% reverse(L, R) is true if R is the reversal of the list L
+reverse(L, R) :- reverse(L, [], R).
+reverse([], Acc, Acc).
+reverse([H|T], Acc, R) :- reverse(T, [H|Acc], R).
+
+% palindrome(L) is true if L is a palindrome
+palindrome(L) :- reverse(L, L).
