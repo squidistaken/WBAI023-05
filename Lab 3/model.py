@@ -378,9 +378,6 @@ def evaluate_random_model():
 ##
 
 def check_all_models():
-    # This function should return True if KB entails INFER, otherwise it should return False
-    # TODO: Revise if this is incorrect.
-
     # Set up all possible models - represents a truth table.
     models = []
     booleans = list(itertools.product([True, False], repeat=len(identifiers)))
@@ -394,6 +391,7 @@ def check_all_models():
 
     no_entailment = 0
     entailment = 0
+
     # Evaluating each model
     for m in models:
         print("Chosen model: ", m)

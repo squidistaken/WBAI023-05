@@ -259,13 +259,12 @@ def resolution(kb):
 
 def init():
     kb = []
-    # Example input: [a,~b],[a,b,~c,~d],[b,c,e], KB=[[a,~b],[a,b,~c,~d],[b,c,e]]
+    # Example input: KB=[[~a,~b],[a,~b,~c,~d],[b,~d],[c,~d],[d]]
     kb_standard_input = str(input())
     kb_clause = ""
     idx = 0
     
     # Read input and create clauses for the Knowledge Base
-    # Example: KB=[[~a,~b],[a,~b,~c,~d],[b,~d],[c,~d],[d]]
     while idx < len(kb_standard_input):
         # These characters are of no importance, so we skip them
         if kb_standard_input[idx].isupper() or kb_standard_input[idx] in "=,]":
@@ -322,7 +321,8 @@ def recursive_print_proof(idx, clause_set, parent_group_list=None):
                     parent_group_list.append((current_clause, clause_set[i], clause_set[j]))
                     break
 
-    # Base case: No
+    # Base case: If we cannot find the two parents of a certain clause, we remove each parent in the parent group list,
+    #            and then define the relationship.
     if not found:
         for _ in range(len(parent_group_list)):
             cur, p1, p2 = parent_group_list.pop()

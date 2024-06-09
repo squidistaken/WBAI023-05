@@ -35,8 +35,4 @@ path(X, Y) :- path(X, Y, []).
 path(X, Y, _) :- open(X, Y).
 
 % Recursively find the path between X to Y via cells Z
-path(X, Y, Visited) :-
-    open(X, Z),
-    Z \= Y,
-    \+ member(Z, Visited),
-    path(Z, Y, [X | Visited]).
+path(X, Y, Visited) :- open(X, Z), Z \= Y, \+ member(Z, Visited), path(Z, Y, [X | Visited]).
